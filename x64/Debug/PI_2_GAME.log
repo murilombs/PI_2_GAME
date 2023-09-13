@@ -1,0 +1,2 @@
+﻿MSVCRTD.lib(exe_winmain.obj) : error LNK2019: símbolo externo não resolvido, WinMain, referenciado na função "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe : fatal error LNK1120: 1 externo não resolvidos
