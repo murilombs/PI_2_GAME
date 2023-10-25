@@ -53,17 +53,17 @@ int main() {
 		return 1;
 	}
 
-	//al_register_event È usado para registrar eventos de uma fonte especifica (display, teclado etc) 
+	//al_register_event √© usado para registrar eventos de uma fonte especifica (display, teclado etc) 
 	al_register_event_source(queue, al_get_keyboard_event_source());
 	al_register_event_source(queue, al_get_display_event_source(disp));
 	al_register_event_source(queue, al_get_timer_event_source(timer));
 
 	/*
-	> A variavel done È usada para controlar quando o programa deve ser encerrado
-	Ao ser definida como "false", o programa entende que n„o deve ser encerrado
-	> A vari·vel "redraw" È usada para controlar quando a tela deve ser redesenhada
-	Ao ser definida como "true", o programa entende que no inÌcio ela deve ser reinicializada
-	> A vari·vel "event" em ALLEGRO_EVENT È usada para armazenar eventos. … nele que os eventos
+	> A variavel done √© usada para controlar quando o programa deve ser encerrado
+	Ao ser definida como "false", o programa entende que n√£o deve ser encerrado
+	> A vari√°vel "redraw" √© usada para controlar quando a tela deve ser redesenhada
+	Ao ser definida como "true", o programa entende que no in√≠cio ela deve ser reinicializada
+	> A vari√°vel "event" em ALLEGRO_EVENT √© usada para armazenar eventos. √â nele que os eventos
 	pendentes ficam armazenados e eventualmente processados
 	*/
 
@@ -71,7 +71,7 @@ int main() {
 	bool redraw = true;
 	ALLEGRO_EVENT event;
 
-	// > Vari·vel do contador regressivo
+	// > Vari√°vel do contador regressivo
 	int contador = 30;
 
 	//Inicializa o contador criado anteriormente
@@ -80,7 +80,7 @@ int main() {
 	while (1) {
 		al_wait_for_event(queue, &event);
 
-		//Caso ocorra um evento x, tal coisa dever· ocorrer
+		//Caso ocorra um evento x, tal coisa dever√° ocorrer
 		switch (event.type) {
 
 		case ALLEGRO_EVENT_TIMER:
@@ -98,7 +98,7 @@ int main() {
 
 		case ALLEGRO_EVENT_KEY_DOWN:
 
-			//Encerra o programa quando ESC È pressionado
+			//Encerra o programa quando ESC √© pressionado
 			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
 				done = true;
 			}
@@ -126,6 +126,7 @@ int main() {
 	al_destroy_font(font);
 	al_destroy_display(disp);
 	al_destroy_timer(timer);
+	al_destroy_event_queue(queue);
 
 	return 0;
 }
