@@ -1,2 +1,3 @@
 ﻿  main.c
-  PI_2_GAME.vcxproj -> C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\muril\PI_2_GAME\main.c(96,43): warning C4020: 'gerar_genes': muitos parâmetros reais
+  PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe

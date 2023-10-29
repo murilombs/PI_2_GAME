@@ -103,7 +103,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,7 +134,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="abobora.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="manipuladoresGene.c" />
+    <ClCompile Include="semente.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="abobora.h" />
+    <ClInclude Include="manipuladoresGene.h" />
+    <ClInclude Include="semente.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

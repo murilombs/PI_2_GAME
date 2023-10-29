@@ -21,8 +21,25 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TesteJanela.c">
+    <ClCompile Include="semente.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="abobora.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="manipuladoresGene.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="semente.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abobora.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="manipuladoresGene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

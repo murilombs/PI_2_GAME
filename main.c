@@ -2,6 +2,9 @@
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
 
+#include "abobora.h"
+#include "manipuladoresGene.h"
+
 int main() {
 
 	//Inicializa o programa
@@ -38,7 +41,7 @@ int main() {
 	}
 
 	//Cria uma janela
-	ALLEGRO_DISPLAY* disp = al_create_display(1200, 800);
+	ALLEGRO_DISPLAY* disp = al_create_display(900, 700);
 
 	if (!disp) {
 		printf("Erro ao inicializar a janela\n");
@@ -72,13 +75,35 @@ int main() {
 	ALLEGRO_EVENT event;
 
 	// > Variável do contador regressivo
-	int contador = 30;
+	int contador = 60;
+	// > variavel para pular linhas em exibição de lista de genes
+	int espacoY = 0;
 
 	//Inicializa o contador criado anteriormente
 	al_start_timer(timer);
 
+	struct Abobora *aboboras;
+
 	while (1) {
 		al_wait_for_event(queue, &event);
+
+
+		int aboborasCriadas = 4;
+
+		if (aboboras == NULL) {
+			printf("Falha no Array de aboboras \n");
+		}
+
+		aboboras = (struct Abobora *)malloc(aboborasCriadas * sizeof(struct Abobora));
+
+		for (int i = 0; i < aboborasCriadas; i++) {
+			gera_abobora_code(&aboboras[i], i);
+			for (int p1 = 0; p1 < 4; p1++) {
+				for (int p2 = 0; p2 < 2; p2++) {
+					gerar_genes(&aboboras[i].semente, p1, p2);
+				}
+			}
+		};
 
 		//Caso ocorra um evento x, tal coisa deverá ocorrer
 		switch (event.type) {
@@ -115,9 +140,24 @@ int main() {
 			break;
 
 		if (redraw && al_is_event_queue_empty(queue)) {
-			al_clear_to_color(al_map_rgb(255, 219, 245)); //Define a cor de fundo
-			al_draw_textf(font, al_map_rgb(0, 0, 0), 100, 0, ALLEGRO_ALIGN_CENTER, "%d", contador); //Cor da fonte e alinhamento
-			al_flip_display(); //Atualiza a tela
+			//Define a cor de fundo
+			al_clear_to_color(al_map_rgb(255, 219, 245));
+
+			// al_draw_textf -> fonte , cor da fonte, posição em X, posição em Y, alinhamento, tipo
+			for (int i = 0; i < 4; i++) {
+				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY += 10,
+					ALLEGRO_ALIGN_CENTER, "%d", aboboras[i].semente.aboboraCode);
+			}
+			/*
+			for (int j = 0; j < 8; j++) {
+				espacoY += 10;
+				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY,
+					ALLEGRO_ALIGN_CENTER, "%d", aboboras[0].semente.genes[j]);
+			}
+			*/
+
+			//Atualiza a tela
+			al_flip_display();
 
 			redraw = false;
 		}
@@ -126,6 +166,7 @@ int main() {
 	al_destroy_font(font);
 	al_destroy_display(disp);
 	al_destroy_timer(timer);
+	free(aboboras);
 
 	return 0;
 }
