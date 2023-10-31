@@ -1,13 +1,4 @@
-﻿  abobora.c
-  main.c
-  manipuladoresGene.c
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(18,8): warning C4244: 'função': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(49,18): warning C4028: parâmetro formal 3 diferente da declaração
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(82,26): warning C4047: 'função': 'Abobora *' difere em níveis de indireção de 'Abobora **'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(82,26): warning C4024: 'redimensionadorDeArrays': tipos diferentes para parâmetro formal e real 1
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(82,37): warning C4047: 'função': 'int *' difere em níveis de indireção de 'int **'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(82,37): warning C4024: 'redimensionadorDeArrays': tipos diferentes para parâmetro formal e real 2
-  semente.c
-  Gerando Código...
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(23): warning C4715: 'geradorRandom': nem todos os caminhos de controle retornam um valor
+﻿  main.c
+C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\main.c(121,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  LINK : C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
   PI_2_GAME.vcxproj -> C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe

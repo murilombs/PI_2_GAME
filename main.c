@@ -5,7 +5,11 @@
 #include "abobora.h"
 #include "manipuladoresGene.h"
 
+#include <locale.h>
+
 int main() {
+
+	setlocale(LC_ALL, "Portuguese");
 
 	//Inicializa o programa
 	al_init();
@@ -82,11 +86,11 @@ int main() {
 	//Inicializa o contador criado anteriormente
 	al_start_timer(timer);
 
-	struct Abobora *aboboras;
+	struct Abobora aboboras[40];
 
-	aboboras = (struct Abobora*)malloc(4 * sizeof(struct Abobora));
+	int aboborasCriadas = 4;
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < aboborasCriadas; i++) {
 		gera_abobora_code(&aboboras[i], i);
 		for (int p1 = 0; p1 < 4; p1++) {
 			for (int p2 = 0; p2 < 2; p2++) {
@@ -95,13 +99,12 @@ int main() {
 		}
 	};
 
-	int aboborasCriadas = sizeof(aboboras) / sizeof(aboboras[0]);
-
 	int novoComprimento = aboborasCriadas + 4;
+	printf("O comprimento dps: %d\n", novoComprimento);
 
-	cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
+	//cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
 
-	for (int j = 0; j < 4; j++) {
+	for (int j = 0; j < novoComprimento; j++) {
 		printf("AboboraCode: %d \n", aboboras[j].semente.aboboraCode);
 		for (int x = 0; x < 4; x++) {
 			for (int y = 0; y < 2; y++) {
@@ -110,40 +113,114 @@ int main() {
 		}
 		printf("********************************\n");
 	}
-	printf("Comprimento: %d \n", aboborasCriadas);
 
 	while (1) {
+		int numCode = -1;
+		while (numCode <= 1 || numCode >= 4) {
+			printf("Insira o número da abóbora para checar as características : ");
+			scanf("%d", &numCode);
+
+			if (numCode >= 1 && numCode <= 4) {
+				printf("Características da abóbora:\n");
+				for (int i = 0; i < 4; i++) {
+					switch (i) {
+					case 0:
+						printf("Sabor: ");
+						switch (aboboras[numCode - 1].semente.genes[i][0] + aboboras[numCode - 1].semente.genes[i][1]) {
+						case 0:
+							printf("Doce\n");
+							break;
+						case 1:
+							printf("Salgada\n");
+							break;
+						case 2:
+							printf("Salgada\n");
+							break;
+						}
+						break;
+					case 1:
+						printf("Tamanho: ");
+						switch (aboboras[numCode - 1].semente.genes[i][0] + aboboras[numCode - 1].semente.genes[i][1]) {
+						case 0:
+							printf("Grande\n");
+							break;
+						case 1:
+							printf("Pequena\n");
+							break;
+						case 2:
+							printf("Pequena\n");
+							break;
+						}
+						break;
+					case 2:
+						printf("Cor: ");
+						switch (aboboras[numCode - 1].semente.genes[i][0] + aboboras[numCode - 1].semente.genes[i][1]) {
+						case 0:
+							printf("Verde\n");
+							break;
+						case 1:
+							printf("Laranja\n");
+							break;
+						case 2:
+							printf("Laranja\n");
+							break;
+						}
+						break;
+					case 3:
+						printf("Casca: ");
+						switch (aboboras[numCode - 1].semente.genes[i][0] + aboboras[numCode - 1].semente.genes[i][1]) {
+						case 0:
+							printf("Grossa\n");
+							break;
+						case 1:
+							printf("Fina\n");
+							break;
+						case 2:
+							printf("Fina\n");
+							break;
+						}
+						break;
+					}
+				}
+
+			}
+			else {
+				printf("Essa abóbora não existe. Insira o código correto!\n");
+			}
+			printf("********************************\n");
+		}
+
 		al_wait_for_event(queue, &event);
 
 		//Caso ocorra um evento x, tal coisa deverá ocorrer
 		switch (event.type) {
 
-			case ALLEGRO_EVENT_TIMER:
+		case ALLEGRO_EVENT_TIMER:
 
-				//Passo do contador
-				contador--;
+			//Passo do contador
+			contador--;
 
-				if (contador <= 0) {
-					//Desativa o temporizador e encerra o programa quando o contador chega a 0s
-					al_stop_timer(timer);
-					done = true;
-				}
-				redraw = true;
-				break;
-
-			case ALLEGRO_EVENT_KEY_DOWN:
-
-				//Encerra o programa quando ESC é pressionado
-				if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-					done = true;
-				}
-
-				break;
-
-			case ALLEGRO_EVENT_DISPLAY_CLOSE:
-
+			if (contador <= 0) {
+				//Desativa o temporizador e encerra o programa quando o contador chega a 0s
+				al_stop_timer(timer);
 				done = true;
-				break;
+			}
+			redraw = true;
+			break;
+
+		case ALLEGRO_EVENT_KEY_DOWN:
+
+			//Encerra o programa quando ESC é pressionado
+			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+				done = true;
+			}
+
+			break;
+
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+
+			done = true;
+			break;
 		}
 
 
@@ -156,7 +233,7 @@ int main() {
 
 			// al_draw_textf -> fonte , cor da fonte, posição em X, posição em Y, alinhamento, tipo
 			for (int i = 0; i < aboborasCriadas; i++) {
-				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY += 10,
+				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, 10,
 					ALLEGRO_ALIGN_CENTER, "%d", aboboras[i].semente.aboboraCode);
 			}
 
