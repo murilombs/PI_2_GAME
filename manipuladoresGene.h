@@ -5,8 +5,13 @@
 #include "abobora.h"
 
 // função para criar genes
-void gerar_genes(struct Semente *semente, int posicao);
+void guarda_gene(struct Abobora *abobora, int p1, int p2);
 
-void cruzamento_genes(struct Abobora p1, struct Abobora p2);
+void cruzamento_genes(
+	struct Abobora abobora1, 
+	struct Abobora abobora2, 
+	struct Abobora **aboboras, 
+	int *comprimento,
+	int novoComprimento);
 
 

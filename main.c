@@ -84,57 +84,68 @@ int main() {
 
 	struct Abobora *aboboras;
 
+	aboboras = (struct Abobora*)malloc(4 * sizeof(struct Abobora));
+
+	for (int i = 0; i < 4; i++) {
+		gera_abobora_code(&aboboras[i], i);
+		for (int p1 = 0; p1 < 4; p1++) {
+			for (int p2 = 0; p2 < 2; p2++) {
+				guarda_gene(&aboboras[i], p1, p2);
+			}
+		}
+	};
+
+	int aboborasCriadas = sizeof(aboboras) / sizeof(aboboras[0]);
+
+	int novoComprimento = aboborasCriadas + 4;
+
+	cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
+
+	for (int j = 0; j < 4; j++) {
+		printf("AboboraCode: %d \n", aboboras[j].semente.aboboraCode);
+		for (int x = 0; x < 4; x++) {
+			for (int y = 0; y < 2; y++) {
+				printf("Genes[%d][%d]: %d\n", x, y, aboboras[j].semente.genes[x][y]);
+			}
+		}
+		printf("********************************\n");
+	}
+	printf("Comprimento: %d \n", aboborasCriadas);
+
 	while (1) {
 		al_wait_for_event(queue, &event);
-
-
-		int aboborasCriadas = 4;
-
-		if (aboboras == NULL) {
-			printf("Falha no Array de aboboras \n");
-		}
-
-		aboboras = (struct Abobora *)malloc(aboborasCriadas * sizeof(struct Abobora));
-
-		for (int i = 0; i < aboborasCriadas; i++) {
-			gera_abobora_code(&aboboras[i], i);
-			for (int p1 = 0; p1 < 4; p1++) {
-				for (int p2 = 0; p2 < 2; p2++) {
-					gerar_genes(&aboboras[i].semente, p1, p2);
-				}
-			}
-		};
 
 		//Caso ocorra um evento x, tal coisa deverá ocorrer
 		switch (event.type) {
 
-		case ALLEGRO_EVENT_TIMER:
+			case ALLEGRO_EVENT_TIMER:
 
-			//Passo do contador
-			contador--;
+				//Passo do contador
+				contador--;
 
-			if (contador <= 0) {
-				//Desativa o temporizador e encerra o programa quando o contador chega a 0s
-				al_stop_timer(timer);
+				if (contador <= 0) {
+					//Desativa o temporizador e encerra o programa quando o contador chega a 0s
+					al_stop_timer(timer);
+					done = true;
+				}
+				redraw = true;
+				break;
+
+			case ALLEGRO_EVENT_KEY_DOWN:
+
+				//Encerra o programa quando ESC é pressionado
+				if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+					done = true;
+				}
+
+				break;
+
+			case ALLEGRO_EVENT_DISPLAY_CLOSE:
+
 				done = true;
-			}
-			redraw = true;
-			break;
-
-		case ALLEGRO_EVENT_KEY_DOWN:
-
-			//Encerra o programa quando ESC é pressionado
-			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-				done = true;
-			}
-
-			break;
-
-		case ALLEGRO_EVENT_DISPLAY_CLOSE:
-
-			done = true;
-			break;
+				break;
 		}
+
 
 		if (done)
 			break;
@@ -144,17 +155,10 @@ int main() {
 			al_clear_to_color(al_map_rgb(255, 219, 245));
 
 			// al_draw_textf -> fonte , cor da fonte, posição em X, posição em Y, alinhamento, tipo
-			for (int i = 0; i < 4; i++) {
+			for (int i = 0; i < aboborasCriadas; i++) {
 				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY += 10,
 					ALLEGRO_ALIGN_CENTER, "%d", aboboras[i].semente.aboboraCode);
 			}
-			/*
-			for (int j = 0; j < 8; j++) {
-				espacoY += 10;
-				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY,
-					ALLEGRO_ALIGN_CENTER, "%d", aboboras[0].semente.genes[j]);
-			}
-			*/
 
 			//Atualiza a tela
 			al_flip_display();
