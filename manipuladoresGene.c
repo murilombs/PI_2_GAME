@@ -52,7 +52,6 @@ void cruzamento_genes(
 {
 
 	struct Abobora novasAboboras[4];
-	//novasAboboras = (struct Abobora*)malloc(4 * sizeof(struct Abobora));
 
 	int res[4][2]; // Array de resultantes da combinatoria
 
@@ -79,7 +78,7 @@ void cruzamento_genes(
 		}
 	}
 
-	redimensionadorDeArrays(&aboboras, &comprimento, novoComprimento);
+	//redimensionadorDeArrays(&aboboras, &comprimento, novoComprimento);
 	int acesso = diferenca;
 
 	for (int n = diferenca; n < novoComprimento; n++) {

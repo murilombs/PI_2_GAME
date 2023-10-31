@@ -1,9 +1,2 @@
-﻿  manipuladoresGene.c
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(18,8): warning C4244: 'função': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(49,18): warning C4028: parâmetro formal 3 diferente da declaração
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(82,26): warning C4047: 'função': 'Abobora *' difere em níveis de indireção de 'Abobora **'
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(82,26): warning C4024: 'redimensionadorDeArrays': tipos diferentes para parâmetro formal e real 1
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(82,37): warning C4047: 'função': 'int *' difere em níveis de indireção de 'int **'
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(82,37): warning C4024: 'redimensionadorDeArrays': tipos diferentes para parâmetro formal e real 2
-C:\Users\muril\PI_2_GAME\manipuladoresGene.c(23): warning C4715: 'geradorRandom': nem todos os caminhos de controle retornam um valor
+﻿  main.c
   PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe

@@ -82,11 +82,11 @@ int main() {
 	//Inicializa o contador criado anteriormente
 	al_start_timer(timer);
 
-	struct Abobora *aboboras;
+	struct Abobora aboboras[40];
 
-	aboboras = (struct Abobora*)malloc(4 * sizeof(struct Abobora));
+	int aboborasCriadas = 4;
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < aboborasCriadas; i++) {
 		gera_abobora_code(&aboboras[i], i);
 		for (int p1 = 0; p1 < 4; p1++) {
 			for (int p2 = 0; p2 < 2; p2++) {
@@ -95,13 +95,12 @@ int main() {
 		}
 	};
 
-	int aboborasCriadas = sizeof(aboboras) / sizeof(aboboras[0]);
-
 	int novoComprimento = aboborasCriadas + 4;
+	printf("O comprimento dps: %d\n", novoComprimento);
 
-	cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
+	//cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
 
-	for (int j = 0; j < 4; j++) {
+	for (int j = 0; j < novoComprimento; j++) {
 		printf("AboboraCode: %d \n", aboboras[j].semente.aboboraCode);
 		for (int x = 0; x < 4; x++) {
 			for (int y = 0; y < 2; y++) {
@@ -110,7 +109,6 @@ int main() {
 		}
 		printf("********************************\n");
 	}
-	printf("Comprimento: %d \n", aboborasCriadas);
 
 	while (1) {
 		al_wait_for_event(queue, &event);
@@ -156,7 +154,7 @@ int main() {
 
 			// al_draw_textf -> fonte , cor da fonte, posição em X, posição em Y, alinhamento, tipo
 			for (int i = 0; i < aboborasCriadas; i++) {
-				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, espacoY += 10,
+				al_draw_textf(font, al_map_rgb(0, 0, 0), 100, 10,
 					ALLEGRO_ALIGN_CENTER, "%d", aboboras[i].semente.aboboraCode);
 			}
 
