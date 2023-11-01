@@ -94,14 +94,25 @@ int main() {
 			}
 		}
 	};
+	printf("AGORA EXISTEM: %d ABOBORAS\n", aboborasCriadas);
+	printf("********************************\n");
 
-	int novoComprimento = aboborasCriadas + 4;
-	printf("O comprimento dps: %d\n", novoComprimento);
-
-	//cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
-
-	for (int j = 0; j < novoComprimento; j++) {
-		printf("AboboraCode: %d \n", aboboras[j].semente.aboboraCode);
+	int eleitos[2];
+	for (int setor = 0; setor < 4; setor++) {
+		gera_abobora_code(&aboboras[aboborasCriadas], aboborasCriadas);
+		cruzamento_genes(aboboras[0], aboboras[2], setor, eleitos);
+		for (int p1 = 0; p1 < 4; p1++) {
+			for (int p2 = 0; p2 < 2; p2++) {
+				aboboras[aboborasCriadas].semente.genes[p1][p2] = eleitos[p2];
+			}
+		}
+		aboborasCriadas += 1;
+	}
+	
+	printf("AGORA EXISTEM: %d ABOBORAS\n", aboborasCriadas);
+	printf("********************************\n");
+	for (int j = 0; j < aboborasCriadas; j++) {
+		printf("AboboraCode: %d ####\n", aboboras[j].semente.aboboraCode);
 		for (int x = 0; x < 4; x++) {
 			for (int y = 0; y < 2; y++) {
 				printf("Genes[%d][%d]: %d\n", x, y, aboboras[j].semente.genes[x][y]);
@@ -168,7 +179,6 @@ int main() {
 	al_destroy_font(font);
 	al_destroy_display(disp);
 	al_destroy_timer(timer);
-	free(aboboras);
 
 	return 0;
 }

@@ -10,8 +10,7 @@ void guarda_gene(struct Abobora *abobora, int p1, int p2);
 void cruzamento_genes(
 	struct Abobora abobora1, 
 	struct Abobora abobora2, 
-	struct Abobora **aboboras, 
-	int *comprimento,
-	int novoComprimento);
+	int setor,
+	int eleitos[2]);
 
 

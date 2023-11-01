@@ -28,61 +28,39 @@ void guarda_gene(struct Abobora *abobora, int p1, int p2) {
 	abobora->semente.genes[p1][p2] = gene;
 };
 
-void redimensionadorDeArrays(struct Abobora* original, int *comprimento, int novoComprimento) {
-
-	struct Abobora* array_temporario = (struct Abobora*)malloc(novoComprimento * sizeof(struct Abobora));
-	int copiarTamanho = (*comprimento < novoComprimento) ? *comprimento : novoComprimento;
-
-	if (array_temporario) {
-		for (int i = 0; i < copiarTamanho; i++) {
-			array_temporario[i] = original[i];
-		}
-		free(original); // libera o espaço no array original
-		original = array_temporario; // passa para original // O ERRO SEMPRE ACONTECE AQUI
-		*comprimento = novoComprimento; // reescreve o tamanho
-	}
-}
-
 void cruzamento_genes(
 	struct Abobora abobora1, 
-	struct Abobora abobora2, 
-	struct Abobora *aboboras,
-	int *comprimento,
-	int novoComprimento) 
+	struct Abobora abobora2,
+	int setor,
+	int eleitos[2])
 {
-
-	struct Abobora novasAboboras[4];
 
 	int res[4][2]; // Array de resultantes da combinatoria
 
-	int diferenca = novoComprimento - *comprimento;
-
-	for (int cont = 0; cont < 4; cont++) {
-		gera_abobora_code(&novasAboboras[cont], diferenca - 1);
-		for (int parte = 0; parte < 4; parte++) {
-			// CODIGO PRO CRUZAMENTO EM PARES
-			for (int i = 0; i < 2; i++) {
-				for (int j = 0; j < 2; j++) {
-					res[i * 2 + j][0] = abobora1.semente.genes[parte][i];
-					res[i * 2 + j][1] = abobora2.semente.genes[parte][j];
-				}
-			}
-
-			/* gera um numero aleatorio entre 0 e 3
-			e usa para escolher um par no array de resultantes
-			para ser incorporado na abobora filha */
-			int randon = geradorRandom(0, 3, 1);
-			for (int p = 0; p < 2; p++) {
-				novasAboboras[cont].semente.genes[parte][p] = res[randon][p];
-			}
+	// CODIGO PRO CRUZAMENTO EM PARTES
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++) {
+			res[i * 2 + j][0] = abobora1.semente.genes[setor][i];
+			res[i * 2 + j][1] = abobora2.semente.genes[setor][j];
 		}
 	}
+	// CODIGO PRO CRUZAMENTO EM PARTES
 
-	//redimensionadorDeArrays(&aboboras, &comprimento, novoComprimento);
-	int acesso = diferenca;
+	int randon = geradorRandom(0, 3, 1);
 
-	for (int n = diferenca; n < novoComprimento; n++) {
-		acesso -= 1;
-		aboboras[n] = novasAboboras[acesso];
+	for (int p = 0; p < 2; p++) {
+		//aboboras[index].semente.genes[setor][p] = res[randon][p];
+		eleitos[p] = res[randon][p];
 	}
+	/*
+	for (int n = 0; n < 4; n++) {
+		gera_abobora_code(&aboboras[comprimento], comprimento); // aboboras[4], 4 + 1
+		for (int p1 = 0; p1 < 4; p1++) {
+			for (int p2 = 0; p2 < 2; p2++) {
+				aboboras[comprimento].semente.genes[p1][p2] = eleitos[p2];
+			}
+		}
+		comprimento += 1; // 4 + 1
+	}
+	*/
 }
