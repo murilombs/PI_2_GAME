@@ -28,6 +28,14 @@ void guarda_gene(struct Abobora *abobora, int p1, int p2) {
 	abobora->semente.genes[p1][p2] = gene;
 };
 
+//vincula ao vetor de caracteristicas
+void guarda_caracteristicas(struct Abobora* abobora) {
+	for (int idx = 0; idx < 4; idx++) {
+		int somaGene = abobora->semente.genes[idx][0] + abobora->semente.genes[idx][1];
+		abobora->caractetisticas[idx] = somaGene;
+	}
+}
+
 void redimensionadorDeArrays(struct Abobora* original, int *comprimento, int novoComprimento) {
 
 	struct Abobora* array_temporario = (struct Abobora*)malloc(novoComprimento * sizeof(struct Abobora));

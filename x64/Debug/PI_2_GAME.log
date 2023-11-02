@@ -1,4 +1,3 @@
 ﻿  main.c
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\main.c(121,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-  LINK : C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe não encontrado ou não compilado pelo o último link incremental; executando link completo
-  PI_2_GAME.vcxproj -> C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\muril\PI_2_GAME\main.c(123,4): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe

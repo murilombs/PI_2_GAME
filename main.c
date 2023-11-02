@@ -97,6 +97,7 @@ int main() {
 				guarda_gene(&aboboras[i], p1, p2);
 			}
 		}
+		guarda_caracteristicas(&aboboras[i]);
 	};
 
 	int novoComprimento = aboborasCriadas + 4;
@@ -104,12 +105,13 @@ int main() {
 
 	//cruzamento_genes(aboboras[0], aboboras[2], &aboboras, &aboborasCriadas, novoComprimento);
 
-	for (int j = 0; j < novoComprimento; j++) {
+	for (int j = 0; j < 4; j++) {
 		printf("AboboraCode: %d \n", aboboras[j].semente.aboboraCode);
 		for (int x = 0; x < 4; x++) {
 			for (int y = 0; y < 2; y++) {
 				printf("Genes[%d][%d]: %d\n", x, y, aboboras[j].semente.genes[x][y]);
 			}
+			printf("Caracteristicas: %d \n", aboboras[j].caractetisticas[x]);
 		}
 		printf("********************************\n");
 	}
