@@ -1,11 +1,16 @@
-#include <stdio.h>
 #include <allegro5/allegro5.h>
 #include <allegro5/allegro_font.h>
+#include <stdio.h>
+#include <time.h>
+#include <locale.h>
 
 #include "abobora.h"
 #include "manipuladoresGene.h"
 
+
 int main() {
+
+	setlocale(LC_ALL, "Portuguese");
 
 	//Inicializa o programa
 	al_init();
@@ -75,16 +80,20 @@ int main() {
 	ALLEGRO_EVENT event;
 
 	// > Variável do contador regressivo
-	int contador = 60;
+	int contador = 300; //definido em 5 min
 	// > variavel para pular linhas em exibição de lista de genes
 	int espacoY = 0;
 
 	//Inicializa o contador criado anteriormente
 	al_start_timer(timer);
 
+	time_t segundos;
+	//time(&segundos);
+	//struct tm* data_hora_atual = localtime(&segundos);
+
 	struct Abobora aboboras[40];
 
-	int aboborasCriadas = 4;
+	int *aboborasCriadas = 4;
 
 	for (int i = 0; i < aboborasCriadas; i++) {
 		gera_abobora_code(&aboboras[i], i);
@@ -93,33 +102,13 @@ int main() {
 				guarda_gene(&aboboras[i], p1, p2);
 			}
 		}
+		guarda_caracteristicas(&aboboras[i]);
+		tempoDeCiclo(&aboboras[i], time(&segundos), 10);
 	};
-	printf("AGORA EXISTEM: %d ABOBORAS\n", aboborasCriadas);
-	printf("********************************\n");
 
-	int eleitos[2];
-	for (int setor = 0; setor < 4; setor++) {
-		gera_abobora_code(&aboboras[aboborasCriadas], aboborasCriadas);
-		cruzamento_genes(aboboras[0], aboboras[2], setor, eleitos);
-		for (int p1 = 0; p1 < 4; p1++) {
-			for (int p2 = 0; p2 < 2; p2++) {
-				aboboras[aboborasCriadas].semente.genes[p1][p2] = eleitos[p2];
-			}
-		}
-		aboborasCriadas += 1;
-	}
-	
-	printf("AGORA EXISTEM: %d ABOBORAS\n", aboborasCriadas);
-	printf("********************************\n");
-	for (int j = 0; j < aboborasCriadas; j++) {
-		printf("AboboraCode: %d ####\n", aboboras[j].semente.aboboraCode);
-		for (int x = 0; x < 4; x++) {
-			for (int y = 0; y < 2; y++) {
-				printf("Genes[%d][%d]: %d\n", x, y, aboboras[j].semente.genes[x][y]);
-			}
-		}
-		printf("********************************\n");
-	}
+	int code1, code2, filhas;
+
+	filhas = 4; // quantas filhas cada cruzamento vai criar
 
 	while (1) {
 		al_wait_for_event(queue, &event);
@@ -127,32 +116,32 @@ int main() {
 		//Caso ocorra um evento x, tal coisa deverá ocorrer
 		switch (event.type) {
 
-			case ALLEGRO_EVENT_TIMER:
+		case ALLEGRO_EVENT_TIMER:
 
-				//Passo do contador
-				contador--;
+			//Passo do contador
+			contador--;
 
-				if (contador <= 0) {
-					//Desativa o temporizador e encerra o programa quando o contador chega a 0s
-					al_stop_timer(timer);
-					done = true;
-				}
-				redraw = true;
-				break;
-
-			case ALLEGRO_EVENT_KEY_DOWN:
-
-				//Encerra o programa quando ESC é pressionado
-				if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
-					done = true;
-				}
-
-				break;
-
-			case ALLEGRO_EVENT_DISPLAY_CLOSE:
-
+			if (contador <= 0) {
+				//Desativa o temporizador e encerra o programa quando o contador chega a 0s
+				al_stop_timer(timer);
 				done = true;
-				break;
+			}
+			redraw = true;
+			break;
+
+		case ALLEGRO_EVENT_KEY_DOWN:
+
+			//Encerra o programa quando ESC é pressionado
+			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) {
+				done = true;
+			}
+
+			break;
+
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+
+			done = true;
+			break;
 		}
 
 
@@ -173,6 +162,26 @@ int main() {
 			al_flip_display();
 
 			redraw = false;
+		}
+
+		displayTodasAboboras(aboborasCriadas, &aboboras);
+		code1 = -1;
+
+		code2 = -1;
+
+		while (code1 <= 1 || code1 >= aboborasCriadas && code2 <= 1 || code2 >= aboborasCriadas) {
+
+			printf("Entre com o código da Primeira abobora: ");
+			scanf("%d", &code1);
+
+			printf("Entre com o código da Segunda abobora: ");
+			scanf("%d", &code2);
+
+			cruzamento(code1, code2, filhas, &aboborasCriadas, aboboras, time(&segundos));
+
+			mudancaDeCiclo(&aboboras, aboborasCriadas, time(&segundos));
+			displayTodasAboboras(aboborasCriadas, &aboboras);
+			break;
 		}
 	}
 
