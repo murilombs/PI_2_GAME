@@ -6,7 +6,9 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
-#define TILE_SIZE 92
+#include "tilemap.h"
+
+#define TILE_SIZE 96
 
 char textoDebug[2000];
 
@@ -32,7 +34,7 @@ void tooltip(ALLEGRO_FONT* font, const char* texto, int mouse_x, int mouse_y) {
 	al_draw_textf(font, al_map_rgb(0, 0, 0), mouse_x + 15, mouse_y + 10, 20, "%s", texto);
 }
 
-void checaClickAbobora(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y) {
+void checaClickAbobora(int tilemap[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y) {
 	for (int linha = 0; linha < 3; linha++) {
 		for (int coluna = 0; coluna < 14; coluna++) {
 
@@ -49,36 +51,7 @@ void checaClickAbobora(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, 
 	}
 }
 
-void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* abob, ALLEGRO_EVENT_QUEUE* queue) {
-
-	for (int linha = 0; linha < 3; linha++) {
-		for (int coluna = 0; coluna < 14; coluna++) {
-
-			int x = inicio_x + coluna * TILE_SIZE;
-			int y = fim_y + linha * TILE_SIZE;
-
-			if (matriz[linha][coluna] == 1) {
-				al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(163, 210, 119));
-				//al_draw_bitmap(abob, x, y, 0);
-			}
-			else if (matriz[linha][coluna] == 2) {
-				al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(125, 86, 64));
-				if ((mouse_x >= x && mouse_x <= x + TILE_SIZE) && (mouse_y >= y && mouse_y <= y + TILE_SIZE)) {
-					al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(225, 131, 60));
-				}
-			}
-			else if (matriz[linha][coluna] == 3) {
-				al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(112, 83, 57));
-				if ((mouse_x >= x && mouse_x <= x + TILE_SIZE) && (mouse_y >= y && mouse_y <= y + TILE_SIZE)) {
-					al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(225, 131, 60));
-				}
-			}
-		}
-	}
-
-}
-
-void interacaoMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_EVENT_QUEUE* queue) {
+void interacaotilemap(int tilemap[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_EVENT_QUEUE* queue) {
 
 }
 
@@ -106,9 +79,18 @@ int main() {
 	// Inicializalção dos addons de imagem
 	must_init(al_init_image_addon(), "addons de imagem");
 
-	// Inicializa e carrega a imagem
-	ALLEGRO_BITMAP* abob = al_load_bitmap("imagens/abobora2.png");
-	must_init(abob, "abob");
+	ALLEGRO_BITMAP* grama = al_load_bitmap("imagens/tileGrama.png");
+	must_init(grama, "imagem de grama");
+	ALLEGRO_BITMAP* terra = al_load_bitmap("imagens/tileTerra.png");
+	must_init(terra, "imagem de terra");
+	ALLEGRO_BITMAP* estagio0 = al_load_bitmap("imagens/tileEstagio0.png");
+	must_init(estagio0, "imagem de estagio0");
+	ALLEGRO_BITMAP* estagio1 = al_load_bitmap("imagens/tileEstagio1.png");
+	must_init(estagio1, "imagem de estagio1");
+	ALLEGRO_BITMAP* estagio2 = al_load_bitmap("imagens/tileEstagio2.png");
+	must_init(estagio2, "imagem de estagio2");
+	ALLEGRO_BITMAP* estagio3 = al_load_bitmap("imagens/tileEstagio3.png");
+	must_init(estagio3, "imagem de estagio3");
 
 	must_init(al_init_primitives_addon(), "primitives addon"); // Inicialização dos primitives
 
@@ -133,16 +115,24 @@ int main() {
 	int mouse_x = 0; // Coordenada de x (eixo vertical)
 	int mouse_y = 0; // Coordenada de y (eixo horizontal)
 
+	int tilemap[7][7] = {
+	{4, 4, 4, 4, 4, 4, 4},
+	{4, 1, 2, 3, 2, 1, 4},
+	{4, 2, 0, 2, 1, 2, 4},
+	{4, 1, 2, 1, 2, 3, 4},
+	{4, 2, 3, 0, 1, 2, 4},
+	{4, 1, 2, 1, 2, 3, 4},
+	{4, 4, 4, 4, 4, 4, 4}
+	};
+
+	int comeco_tilemap_x = (al_get_display_width(display) - (7 * 96)) / 2;
+	int fim_tilemap_y = (al_get_display_height(display) - (7 * 96)) / 2;
+
 	bool mostrar_tooltip = false; // O tooltip será visível quando a variável for true
 
 	bool arrastando = false;
 
-	// Matriz da plantação
-	int matriz[3][14] = {
-	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-	{1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 1},
-	{1, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 1}
-	};
+	// tilemap da plantação
 
 	while (1) { // Loop principal
 
@@ -150,8 +140,8 @@ int main() {
 
 		al_wait_for_event(queue, &event);
 
-		al_clear_to_color(al_map_rgb(255, 255, 255));
-		desenharMatriz(matriz, 0, 444, mouse_x, mouse_y, abob, queue);
+		al_clear_to_color(al_map_rgb(163, 210, 119));
+		desenhartilemap(tilemap, comeco_tilemap_x, fim_tilemap_y, mouse_x, mouse_y, grama, terra, estagio0, estagio1, estagio2, estagio3, queue, TILE_SIZE);
 
 		// Caso ocorra um evento x, tal coisa deve acontecer
 		switch (event.type) {
@@ -211,7 +201,7 @@ int main() {
 				}
 			}
 
-			checaClickAbobora(matriz, 0, 444, mouse_x, mouse_y);
+			checaClickAbobora(tilemap, 0, 444, mouse_x, mouse_y);
 
 
 			break;

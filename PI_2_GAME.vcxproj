@@ -139,11 +139,13 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="manipuladoresGene.c" />
     <ClCompile Include="semente.c" />
+    <ClCompile Include="tilemap.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abobora.h" />
     <ClInclude Include="manipuladoresGene.h" />
     <ClInclude Include="semente.h" />
+    <ClInclude Include="tilemap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
