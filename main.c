@@ -92,7 +92,7 @@ int main() {
 	must_init(al_init_ttf_addon(), "addons do Allegro"); // Inicializa os addons do Allegro
 
 	// Inicializa, carrega a fonte True Type + caminho relativo
-	ALLEGRO_FONT* font = al_load_ttf_font("goethe\\GoetheBold.ttf", 28, 0);
+	ALLEGRO_FONT* font = al_load_ttf_font("fontes/GoetheBold.ttf", 28, 0);
 	must_init(font, "fonte");
 
 	// Inicialização, criação do display e dimensões
@@ -107,7 +107,7 @@ int main() {
 	must_init(al_init_image_addon(), "addons de imagem");
 
 	// Inicializa e carrega a imagem
-	ALLEGRO_BITMAP* abob = al_load_bitmap("abob.png");
+	ALLEGRO_BITMAP* abob = al_load_bitmap("imagens/abobora2.png");
 	must_init(abob, "abob");
 
 	must_init(al_init_primitives_addon(), "primitives addon"); // Inicialização dos primitives

@@ -1,51 +1,20 @@
-﻿  abobora.c
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x56 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x9c que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x183 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x2aa que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x2ea que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x312 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x4f1 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x548 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xbf6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(26,22): warning C4047: '=': 'int' difere em níveis de indireção de 'time_t *'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(33,32): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'int'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(33,32): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
-  main.c
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb37 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xcb2 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xcbb que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xcd2 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xd43 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xd4d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xdd5 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xee7 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xf0b que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xf15 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11e4 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11ec que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11fb que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1226 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x12f6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x12fb que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x130d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x134f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-  manipuladoresGene.c
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x12c que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x592 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-  (compilando o arquivo fonte 'manipuladoresGene.c')
-  
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb9 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-  (compilando o arquivo fonte 'manipuladoresGene.c')
-  
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(18,8): warning C4244: 'função': conversão de 'time_t' para 'unsigned int', possível perda de dados
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(107,50): warning C4047: 'função': 'time_t *const ' difere em níveis de indireção de 'time_t **'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(107,50): warning C4024: 'time': tipos diferentes para parâmetro formal e real 1
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(107,45): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'time_t'
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(107,45): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
-  semente.c
-  Gerando Código...
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\manipuladoresGene.c(23): warning C4715: 'geradorRandom': nem todos os caminhos de controle retornam um valor
-C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\abobora.c(21): warning C4715: 'buscadorDeAbobora': nem todos os caminhos de controle retornam um valor
-  PI_2_GAME.vcxproj -> C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+﻿  main.c
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xb37 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xcb1 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xcba that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xcd1 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xd42 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xd4c that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xdd4 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xef2 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xf16 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xf20 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11ef that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11f7 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1206 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1231 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1301 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1306 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1318 that is illegal in the current source character set (codepage 65001).
+C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x135a that is illegal in the current source character set (codepage 65001).
+  PI_2_GAME.vcxproj -> C:\Users\herob\source\repos\PI_2_GAME\x64\Debug\PI_2_GAME.exe
