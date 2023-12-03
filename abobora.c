@@ -37,61 +37,57 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 }
 
 // FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
-void displayCaracteristica(struct Abobora abobora, int qualExibir) {
+char* displayCaracteristica(struct Abobora abobora, int qualExibir) {
 	switch (qualExibir) {
 		case 0:
-			printf("Sabor: ");
 			switch (abobora.caractetisticas[qualExibir]) {
 			case 0:
-				printf("Doce\n");
+				return "Sabor: Doce\n";
 				break;
 			case 1:
-				printf("Salgada\n");
+				return "Sabor: Salgada\n";
 				break;
 			case 2:
-				printf("Salgada\n");
+				return "Sabor: Salgada\n";
 				break;
 			}
 			break;
 		case 1:
-			printf("Tamanho: ");
 			switch (abobora.caractetisticas[qualExibir]) {
 			case 0:
-				printf("Grande\n");
+				return "Tamanho: Grande\n";
 				break;
 			case 1:
-				printf("Pequena\n");
+				return "Tamanho: Pequena\n";
 				break;
 			case 2:
-				printf("Pequena\n");
+				return "Tamanho: Pequena\n";
 				break;
 			}
 			break;
 		case 2:
-			printf("Cor: ");
 			switch (abobora.caractetisticas[qualExibir]) {
 			case 0:
-				printf("Verde\n");
+				return "Cor: Verde\n";
 				break;
 			case 1:
-				printf("Laranja\n");
+				return "Cor: Laranja\n";
 				break;
 			case 2:
-				printf("Laranja\n");
+				return "Cor: Laranja\n";
 				break;
 			}
 			break;
 		case 3:
-			printf("Casca: ");
 			switch (abobora.caractetisticas[qualExibir]) {
 			case 0:
-				printf("Grossa\n");
+				return "Casca: Grossa\n";
 				break;
 			case 1:
-				printf("Fina\n");
+				return "Casca: Fina\n";
 				break;
 			case 2:
-				printf("Fina\n");
+				return "Casca: Fina\n";
 				break;
 			}
 			break;
@@ -105,10 +101,9 @@ void displayTimestampStagio(struct Abobora abobora) {
 void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras) {
 	for (int j = 0; j < aboborasCriadas; j++) {
 		printf("#### AboboraCode: %d ####\n", aboboras[j].semente.aboboraCode);
-		for (int caracteristica = 0; caracteristica < 4; caracteristica++) {
-			displayCaracteristica(aboboras[j], caracteristica);
-		}
+		
 		displayTimestampStagio(aboboras[j]);
+		printf("Cordenadas:\nX -> %d\nY -> %d\n", aboboras[j].cordernadas[0], aboboras[j].cordernadas[1]);
 		printf("********************************\n");
 	}
 };

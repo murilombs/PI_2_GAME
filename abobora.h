@@ -10,6 +10,7 @@ struct Abobora
 	int tempoCiclo;
 	int estagio;
 	int jaReproduziu;
+	int cordernadas[2];
 };
 
 void gera_abobora_code(struct Abobora *abobora, int anterior);
@@ -19,6 +20,8 @@ int buscadorDeAbobora(int aboboraCode, int aboborasCriadas, struct Abobora* abob
 void tempoDeCiclo(struct Abobora* abobora, time_t* timestamp, int acrescimo);
 
 void mudancaDeCiclo(struct Abobora* aboboras, int aboborasCriadas, int timestampAtual);
+
+char* displayCaracteristica(struct Abobora abobora, int qualExibir);
 
 void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras);
 #endif
