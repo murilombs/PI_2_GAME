@@ -20,4 +20,15 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="imagens\grid.png" />
+    <Image Include="imagens\gridAbobora.png" />
+    <Image Include="imagens\gridSemente.png" />
+    <Image Include="imagens\tileEstagio0.png" />
+    <Image Include="imagens\tileEstagio1.png" />
+    <Image Include="imagens\tileEstagio2.png" />
+    <Image Include="imagens\tileEstagio3.png" />
+    <Image Include="imagens\tileGrama.png" />
+    <Image Include="imagens\tileTerra.png" />
+  </ItemGroup>
 </Project>

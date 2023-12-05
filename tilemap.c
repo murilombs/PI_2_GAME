@@ -25,8 +25,8 @@ void desenhartilemap(
 			int y = inicio_y + linha * tamanho_tile;
 
 			if (tilemap[linha][coluna] == 4) {
-		
-				al_draw_bitmap(grama, x, y, 0);
+				al_draw_filled_rectangle(x, y, x + 80, y + 80, al_map_rgb(163, 210, 119));
+				//al_draw_bitmap(grama, x, y, 0);
 			}
 			else if (tilemap[linha][coluna] == 5) {
 				al_draw_bitmap(terra, x, y, 0);

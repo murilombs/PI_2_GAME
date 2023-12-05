@@ -151,6 +151,17 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="imagens\grid.png" />
+    <Image Include="imagens\gridAbobora.png" />
+    <Image Include="imagens\gridSemente.png" />
+    <Image Include="imagens\tileEstagio0.png" />
+    <Image Include="imagens\tileEstagio1.png" />
+    <Image Include="imagens\tileEstagio2.png" />
+    <Image Include="imagens\tileEstagio3.png" />
+    <Image Include="imagens\tileGrama.png" />
+    <Image Include="imagens\tileTerra.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets" Condition="Exists('packages\AllegroDeps.1.14.0\build\native\AllegroDeps.targets')" />
