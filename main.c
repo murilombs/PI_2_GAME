@@ -27,7 +27,7 @@ struct Semente sementeInv[9];
 
 
 char textoDebug[2000];
-char* textoDisplay[10];
+char* textoDisplay[60];
 
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
@@ -206,9 +206,10 @@ int main() {
 		case ALLEGRO_EVENT_TIMER:
 			if ((al_get_timer_started(timer)) && 
 				(mostrar_tooltip)) { 
-				tooltip(font, &textoDisplay, mouse_x, mouse_y, 
+				tooltip(font, &textoDisplay, mouse_x, mouse_y,
 					aboborasCriadas, &aboboras);
 			}
+
 			break;
 
 		case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:

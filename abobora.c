@@ -39,11 +39,13 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 }
 
 
-void displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
+void displayCaracteristica(char** caracteristicas, struct Abobora* abobora) {
 	char* sabor;
 	char* tamanho;
 	char* cor;
 	char* casca;
+
+	char* concatenados[60];
 
 	for (int i = 0; i < 4; i++) {
 		// SABOR
@@ -104,23 +106,6 @@ void displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
 		// CASCA
 	}
 
-	size_t comprimento_total = strlen(sabor) + strlen(tamanho) + strlen(cor) + strlen(casca);
-
-	sprintf(&caracteristicas, "%s,\n%s,\n%s,\n%s", sabor, tamanho, cor, casca);
+	sprintf(concatenados, "%s,\n%s,\n%s,\n%s\n", sabor, tamanho, cor, casca);
+	*caracteristicas = concatenados;
 }
-
-// FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
-void displayTimestampStagio(struct Abobora abobora) {
-	printf("Estagio: %d \nTimestamp: %d\n", abobora.estagio, abobora.tempoCiclo);
-};
-
-void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras) {
-	for (int j = 0; j < aboborasCriadas; j++) {
-		printf("#### AboboraCode: %d ####\n", aboboras[j].semente.aboboraCode);
-		
-		displayTimestampStagio(aboboras[j]);
-		printf("Cordenadas:\nX -> %d\nY -> %d\n", aboboras[j].cordernadas[0], aboboras[j].cordernadas[1]);
-		printf("********************************\n");
-	}
-};
-// FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
