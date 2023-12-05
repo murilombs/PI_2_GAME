@@ -32,11 +32,11 @@ void desenharSementeInv(struct Semente sementeInv[9], int tamanho, int comecoTil
 		}
 	}
 }
-void desenharAboboraInv(struct Abobora aboboraInv[9], int tamanho, int comecoTilemap_x, ALLEGRO_BITMAP* abobora, ALLEGRO_BITMAP* grid) {
+void desenharAboboraInv(struct Abobora aboboraInv[9], int tamanho, int finalTilemap_x, ALLEGRO_BITMAP* abobora, ALLEGRO_BITMAP* grid) {
 	int total_largura = 3 * tamanho;
 	int total_altura = 3 * tamanho;
 
-	int offset_x = (comecoTilemap_x - total_largura) / 2 + (comecoTilemap_x + (7 * 80));
+	int offset_x = (finalTilemap_x - total_largura) / 2 + (finalTilemap_x + (7 * 80));
 	int offset_y = (720 - total_altura) / 2;
 
 	al_draw_bitmap(abobora, (offset_x + tamanho), 100, 0);

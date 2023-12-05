@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <locale.h>
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
@@ -10,6 +13,8 @@
 #include "abobora.h"
 #include "inventario.h"
 
+#include "manipuladoresGene.h"
+#include "funcExibicao.h"
 
 
 #define TILE_SIZE 80
@@ -19,6 +24,11 @@ char textoDebug[2000];
 struct Abobora aboboras[40];
 struct Abobora aboboraInv[9];
 struct Semente sementeInv[9];
+
+
+char textoDebug[2000];
+char* textoDisplay[10];
+
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
 
@@ -31,36 +41,6 @@ void exibir_mensagem(ALLEGRO_FONT* font, const char* mensagem) {
 	al_draw_textf(font, al_map_rgb(255, 255, 255), 640, 50, ALLEGRO_ALIGN_CENTER, "%s\n", mensagem);
 	al_flip_display();
 	al_rest(1.0);
-
-}
-
-void tooltip(ALLEGRO_FONT* font, const char* texto, int mouse_x, int mouse_y) {
-	int largura = 220;
-	int altura = 100;
-
-	al_draw_filled_rectangle(mouse_x, mouse_y, mouse_x + largura, mouse_y + altura, al_map_rgb(3, 181, 24));
-	al_draw_textf(font, al_map_rgb(0, 0, 0), mouse_x + 15, mouse_y + 10, 20, "%s", texto);
-}
-
-void checaClickAbobora(int tilemap[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y) {
-	for (int linha = 0; linha < 3; linha++) {
-		for (int coluna = 0; coluna < 14; coluna++) {
-
-			int x = inicio_x + coluna * TILE_SIZE;
-			int y = fim_y + linha * TILE_SIZE;
-
-			if (mouse_x > x &&
-				mouse_y > y &&
-				mouse_x < x + TILE_SIZE &&
-				mouse_y < y + TILE_SIZE) {
-				printf("Clicando em cima do quadrado de x: %d e y: %d\n", linha, coluna);
-			}
-		}
-	}
-}
-
-void interacaotilemap(int tilemap[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_EVENT_QUEUE* queue) {
-
 }
 
 
@@ -131,7 +111,7 @@ int main() {
 
 	int tilemap[7][7] = {
 	{4, 4, 4, 4, 4, 4, 4},
-	{4, 5, 5, 5, 5, 5, 4},
+	{4, 2, 5, 5, 5, 5, 4},
 	{4, 5, 5, 5, 5, 5, 4},
 	{4, 5, 5, 5, 5, 5, 4},
 	{4, 5, 5, 5, 5, 5, 4},
@@ -150,13 +130,30 @@ int main() {
 
 	bool arrastando = false;
 
+	time_t segundos;
+
+	struct Abobora aboboras[49];
+
+	int* aboborasCriadas = 1;
+
+	for (int i = 0; i < aboborasCriadas; i++) {
+		gera_abobora_code(&aboboras[i], i);
+		for (int p1 = 0; p1 < 4; p1++) {
+			for (int p2 = 0; p2 < 2; p2++) {
+				guarda_gene(&aboboras[i], p1, p2);
+			}
+		}
+		guarda_caracteristicas(&aboboras[i]);
+		tempoDeCiclo(&aboboras[i], time(&segundos), 10);
+		aboboras[i].cordernadas[0] = 0;
+		aboboras[i].cordernadas[1] = 0;
+	};
+
 	// tilemap da plantação
 
 	initInv(sementeInv, aboboraInv);
 
 	while (1) { // Loop principal
-
-
 
 		al_wait_for_event(queue, &event);
 
@@ -169,23 +166,27 @@ int main() {
 		// Caso ocorra um evento x, tal coisa deve acontecer
 		switch (event.type) {
 
-		case ALLEGRO_EVENT_KEY_DOWN: // Caso uma tecla seja pressionada...
-			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) { // Se a tecla pressionada for ESC o programa fecha
-
+		case ALLEGRO_EVENT_KEY_DOWN:
+			// Se a tecla pressionada for ESC o programa fecha
+			if (event.keyboard.keycode == ALLEGRO_KEY_ESCAPE) { 
 				done = true;
 			}
 			break;
 
-		case ALLEGRO_EVENT_DISPLAY_CLOSE: // Se o display for fechado, o programa acaba
+		case ALLEGRO_EVENT_DISPLAY_CLOSE:
+			// Se o display for fechado, o programa acaba
 			done = true;
-
 			break;
 
-		case ALLEGRO_EVENT_MOUSE_AXES: // Guarda na fila de eventos do mouse as coordenadas do cursor
+		case ALLEGRO_EVENT_MOUSE_AXES:
+			// Guarda na fila de eventos do mouse as coordenadas do cursor
 			mouse_x = event.mouse.x;
 			mouse_y = event.mouse.y;
 
-			if ((mouse_x >= 960 && mouse_x <= 1920) && (mouse_y >= 520 && mouse_y <= 720)) {
+			if ((mouse_x >= 395 && 
+				 mouse_x <= 875) && 
+				(mouse_y >= 120 && 
+				 mouse_y <= 600)) {
 				mostrar_tooltip = true;
 				al_start_timer(timer);
 			}
@@ -203,12 +204,11 @@ int main() {
 			break;
 
 		case ALLEGRO_EVENT_TIMER:
-
-			if ((al_get_timer_started(timer)) && (mostrar_tooltip)) {
-				tooltip(font, "Essa \u00e9 uma tooltip!", mouse_x, mouse_y);
-
+			if ((al_get_timer_started(timer)) && 
+				(mostrar_tooltip)) { 
+				tooltip(font, &textoDisplay, mouse_x, mouse_y, 
+					aboborasCriadas, &aboboras);
 			}
-
 			break;
 
 		case ALLEGRO_EVENT_MOUSE_BUTTON_DOWN:
@@ -218,26 +218,23 @@ int main() {
 			printf("x = %d\ny = %d\n\n", mouse_x, mouse_y);
 
 			if (event.mouse.button & 1) {
-				if ((event.mouse.x >= 0 && event.mouse.x <= 1280) && (event.mouse.y >= 0 && event.mouse.y <= 720)) {
+				if ((event.mouse.x >= 480 && event.mouse.x <= 800) && 
+					(event.mouse.y >= 300 && event.mouse.y <= 600)) {
 					arrastando = true;
 				}
 			}
 
-			checaClickAbobora(tilemap, 0, 444, mouse_x, mouse_y);
-
-
+			//checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, &aboboras);
 			break;
 
 		case ALLEGRO_EVENT_MOUSE_BUTTON_UP:
 			arrastando = false;
-
 			break;
 		}
 
-		if (done) { // Caso done seja true, o programa fecha.
-
+		if (done) {
+			// Caso done seja true, o programa fecha.
 			break;
-
 		}
 
 		al_draw_text(font, al_map_rgb(0, 0, 0), 10, 10, 0, textoDebug);
@@ -250,6 +247,7 @@ int main() {
 
 	}
 
+	//displayTodasAboboras(aboborasCriadas, &aboboras);
 	al_destroy_font(font);
 	al_destroy_display(display);
 	al_destroy_event_queue(queue);

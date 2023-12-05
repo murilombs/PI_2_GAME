@@ -1,24 +1,35 @@
 ﻿  main.c
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x745 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x8bf that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x8c8 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x8df that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x950 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x95a that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x9e2 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xd4f that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xdd4 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xe65 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xec5 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xee9 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xef3 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11c2 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11ca that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11d9 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1204 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x14cd that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x14d2 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x14e4 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1527 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(226,22): warning C4048: different array subscripts: 'int (*)[14]' and 'int [7][7]'
-  PI_2_GAME.vcxproj -> C:\Users\herob\source\repos\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x435 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5af que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5b8 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5cf que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x640 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x64a que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x6d2 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xa3f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xac4 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb55 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xbb5 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xbd9 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xbe3 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xeb2 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xeba que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xec9 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xef4 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11bd que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11c2 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11d4 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x13e6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb9 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\main.c(139,20): warning C4047: '<': 'int' difere em níveis de indireção de 'int *'
+C:\Users\muril\PI_2_GAME\main.c(147,30): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'time_t'
+C:\Users\muril\PI_2_GAME\main.c(147,30): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
+C:\Users\muril\PI_2_GAME\main.c(209,19): warning C4047: 'função': 'const char *' difere em níveis de indireção de 'char *(*)[10]'
+C:\Users\muril\PI_2_GAME\main.c(209,19): warning C4024: 'tooltip': tipos diferentes para parâmetro formal e real 2
+C:\Users\muril\PI_2_GAME\main.c(210,6): warning C4047: 'função': 'int' difere em níveis de indireção de 'int *'
+C:\Users\muril\PI_2_GAME\main.c(210,6): warning C4024: 'tooltip': tipos diferentes para parâmetro formal e real 5
+C:\Users\muril\PI_2_GAME\main.c(210,23): warning C4047: 'função': 'Abobora *' difere em níveis de indireção de 'Abobora (*)[49]'
+C:\Users\muril\PI_2_GAME\main.c(210,23): warning C4024: 'tooltip': tipos diferentes para parâmetro formal e real 6
+C:\Users\muril\PI_2_GAME\main.c(137,7): warning C4047: 'inicializando': 'int *' difere em níveis de indireção de 'int'
+  PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe
