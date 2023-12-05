@@ -21,7 +21,7 @@ void tempoDeCiclo(struct Abobora* abobora, time_t* timestamp, int acrescimo);
 
 void mudancaDeCiclo(struct Abobora* aboboras, int aboborasCriadas, int timestampAtual);
 
-char* displayCaracteristica(struct Abobora abobora, int qualExibir);
+char* displayCaracteristica(struct Abobora* abobora);
 
 void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras);
 #endif

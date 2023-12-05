@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
 #include "abobora.h"
 
@@ -15,6 +17,7 @@ void gera_abobora_code(struct Abobora *abobora, int anterior) {
 int buscadorDeAbobora(int aboboraCode, int aboborasCriadas, struct Abobora* aboboras) {
 	for (int i = 0; i < aboborasCriadas; i++) {
 		if (aboboraCode == aboboras[i].semente.aboboraCode) {
+			printf("aboboraCode %d\n", aboboras[i].semente.aboboraCode);
 			return i;
 		}
 	}
@@ -37,61 +40,83 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 }
 
 // FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
-char* displayCaracteristica(struct Abobora abobora, int qualExibir) {
-	switch (qualExibir) {
-		case 0:
-			switch (abobora.caractetisticas[qualExibir]) {
-			case 0:
-				return "Sabor: Doce\n";
-				break;
-			case 1:
-				return "Sabor: Salgada\n";
-				break;
-			case 2:
-				return "Sabor: Salgada\n";
-				break;
-			}
-			break;
-		case 1:
-			switch (abobora.caractetisticas[qualExibir]) {
-			case 0:
-				return "Tamanho: Grande\n";
-				break;
-			case 1:
-				return "Tamanho: Pequena\n";
-				break;
-			case 2:
-				return "Tamanho: Pequena\n";
-				break;
-			}
-			break;
-		case 2:
-			switch (abobora.caractetisticas[qualExibir]) {
-			case 0:
-				return "Cor: Verde\n";
-				break;
-			case 1:
-				return "Cor: Laranja\n";
-				break;
-			case 2:
-				return "Cor: Laranja\n";
-				break;
-			}
-			break;
-		case 3:
-			switch (abobora.caractetisticas[qualExibir]) {
-			case 0:
-				return "Casca: Grossa\n";
-				break;
-			case 1:
-				return "Casca: Fina\n";
-				break;
-			case 2:
-				return "Casca: Fina\n";
-				break;
-			}
-			break;
+char* displayCaracteristica(struct Abobora* abobora) {
+	char* sabor = "A";
+	char* tamanho = "B";
+	char* cor = "C";
+	char* casca = "D";
+
+	for (int i = 0; i < 4; i++) {
+		// SABOR
+		if (i == 0 && abobora->caractetisticas[i] == 0) {
+			sabor = "Doce";
+		}
+
+		if (i == 0 && abobora->caractetisticas[i] == 1) {
+			sabor = "Salgada";
+		}
+
+		if (i == 0 && abobora->caractetisticas[i] == 2) {
+			sabor = "Salgada";
+		}
+		// SABOR
+
+
+		// TAMANHO
+		if (i == 1 && abobora->caractetisticas[i] == 0) {
+			tamanho = "Grande";
+		}
+
+		if (i == 1 && abobora->caractetisticas[i] == 1) {
+			tamanho = "Pequena";
+		}
+
+		if (i == 1 && abobora->caractetisticas[i] == 2) {
+			tamanho = "Pequena";
+		}
+		// TAMANHO
+		
+		// COR
+		if (i == 2 && abobora->caractetisticas[i] == 0) {
+			cor = "Verde";
+		}
+
+		if (i == 2 && abobora->caractetisticas[i] == 1) {
+			cor = "Laranja";
+		}
+
+		if (i == 2 && abobora->caractetisticas[i] == 2) {
+			cor = "Laranja";
+		}
+		// COR
+
+		// CASCA
+		if (i == 3 && abobora->caractetisticas[i] == 0) {
+			casca = "Grossa";
+		}
+
+		if (i == 3 && abobora->caractetisticas[i] == 1) {
+			casca = "Fina";
+		}
+
+		if (i == 3 && abobora->caractetisticas[i] == 2) {
+			casca = "Fina";
+		}
+		// CASCA
 	}
+
+	size_t comprimento_total = strlen(sabor) + strlen(tamanho) + strlen(cor) + strlen(casca);
+
+	char* caracteristicas = (char*)malloc(comprimento_total);
+
+	if (caracteristicas == NULL) {
+		fprintf(stderr, "Erro ao alocar memória.\n");
+		exit(EXIT_FAILURE);
+	}
+
+	sprintf(caracteristicas, "%s,\n%s,\n%s,\n%s", sabor, tamanho, cor, casca);
+
+	return caracteristicas;
 }
 
 void displayTimestampStagio(struct Abobora abobora) {

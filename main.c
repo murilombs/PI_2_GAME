@@ -17,6 +17,7 @@
 #define TILE_SIZE 96
 
 char textoDebug[2000];
+const char* textoDisplay;
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
 
@@ -43,11 +44,12 @@ void tooltip(
 	int largura = 220;
 	int altura = 100;
 
+
 	int temAbobora = checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, aboboras);
 	if (temAbobora) {
-		
+		printf("->%d - %d\n", temAbobora, aboboras[1].semente.aboboraCode);
 		int idx = buscadorDeAbobora(temAbobora, aboborasCriadas, &aboboras);
-		char* textoDisplay = displayCaracteristica(aboboras[idx], 0);
+		textoDisplay = displayCaracteristica(&aboboras[idx]);
 
 		al_draw_filled_rectangle(mouse_x, mouse_y, 
 			mouse_x + largura, 
@@ -84,15 +86,11 @@ int checaPosicaoNoCampo(
 						aboboras[i].cordernadas[1] == coluna) {
 						return aboboras[i].semente.aboboraCode;
 					}
-					return 0;
 				}
 			}
 		}
 	}
-}
-
-void interacaotilemap(int tilemap[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_EVENT_QUEUE* queue) {
-
+	return 0;
 }
 
 
@@ -176,7 +174,7 @@ int main() {
 
 	struct Abobora aboboras[49];
 
-	int* aboborasCriadas = 1;
+	int* aboborasCriadas = 2;
 
 	for (int i = 0; i < aboborasCriadas; i++) {
 		gera_abobora_code(&aboboras[i], i);
@@ -297,7 +295,7 @@ int main() {
 		al_set_target_bitmap(al_get_backbuffer(display));
 
 	}
-
+	free((void*)textoDisplay);
 	//displayTodasAboboras(aboborasCriadas, &aboboras);
 	al_destroy_font(font);
 	al_destroy_display(display);
