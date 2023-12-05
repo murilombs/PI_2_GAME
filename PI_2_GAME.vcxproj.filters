@@ -33,6 +33,9 @@
     <ClCompile Include="tilemap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="funcExibicao.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="semente.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="tilemap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funcExibicao.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -39,7 +39,7 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 }
 
 
-char* displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
+void displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
 	char* sabor;
 	char* tamanho;
 	char* cor;
@@ -106,9 +106,7 @@ char* displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
 
 	size_t comprimento_total = strlen(sabor) + strlen(tamanho) + strlen(cor) + strlen(casca);
 
-	sprintf(caracteristicas, "%s,\n%s,\n%s,\n%s", sabor, tamanho, cor, casca);
-
-	return caracteristicas;
+	sprintf(&caracteristicas, "%s,\n%s,\n%s,\n%s", sabor, tamanho, cor, casca);
 }
 
 // FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]

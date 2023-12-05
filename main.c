@@ -13,6 +13,7 @@
 
 #include "abobora.h"
 #include "manipuladoresGene.h"
+#include "funcExibicao.h"
 
 #define TILE_SIZE 96
 
@@ -30,66 +31,6 @@ void exibir_mensagem(ALLEGRO_FONT* font, const char* mensagem) {
 	al_draw_textf(font, al_map_rgb(255, 255, 255), 640, 50, ALLEGRO_ALIGN_CENTER, "%s\n", mensagem);
 	al_flip_display();
 	al_rest(1.0);
-
-}
-
-void tooltip(
-	ALLEGRO_FONT* font, 
-	const char* texto, 
-	int mouse_x, 
-	int mouse_y, 
-	int aboborasCriadas,
-	struct Abobora* aboboras) 
-{
-	int largura = 220;
-	int altura = 100;
-
-
-	int temAbobora = checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, &aboboras);
-	if (temAbobora) {
-		int idx = buscadorDeAbobora(temAbobora, aboborasCriadas, &aboboras);
-		displayCaracteristica(&textoDisplay,  &aboboras[idx]);
-
-		al_draw_filled_rectangle(mouse_x, mouse_y, 
-			mouse_x + largura, 
-			mouse_y + altura, 
-			al_map_rgb(3, 181, 24));
-
-		al_draw_textf(font, al_map_rgb(0, 0, 0), 
-			mouse_x + 15, 
-			mouse_y + 10, 
-			20, "%s", textoDisplay);
-	}
-}
-
-int checaPosicaoNoCampo(
-	int inicio_x, 
-	int fim_y, 
-	int mouse_x, 
-	int mouse_y, 
-	int aboborasCriadas,
-	struct Abobora* aboboras) 
-{
-	for (int linha = 0; linha < 5; linha++) {
-		for (int coluna = 0; coluna < 5; coluna++) {
-
-			int x = inicio_x + coluna * TILE_SIZE;
-			int y = fim_y + linha * TILE_SIZE;
-
-			if (mouse_x > x &&
-				mouse_y > y &&
-				mouse_x < x + TILE_SIZE &&
-				mouse_y < y + TILE_SIZE) {
-				for (int i = 0; i < aboborasCriadas; i++) {
-					if (aboboras[i].cordernadas[0] == linha && 
-						aboboras[i].cordernadas[1] == coluna) {
-						return aboboras[i].semente.aboboraCode;
-					}
-				}
-			}
-		}
-	}
-	return 0;
 }
 
 
@@ -253,7 +194,7 @@ int main() {
 		case ALLEGRO_EVENT_TIMER:
 			if ((al_get_timer_started(timer)) && 
 				(mostrar_tooltip)) { 
-				tooltip(font, "Essa \u00e9 uma tooltip!", mouse_x, mouse_y, 
+				tooltip(font, &textoDisplay, mouse_x, mouse_y, 
 					aboborasCriadas, &aboboras);
 			}
 			break;
@@ -295,7 +236,6 @@ int main() {
 
 	}
 
-	//free((void*)textoDisplay);
 	//displayTodasAboboras(aboborasCriadas, &aboboras);
 	al_destroy_font(font);
 	al_destroy_display(display);
