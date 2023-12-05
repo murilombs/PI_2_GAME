@@ -53,3 +53,15 @@ void desenharAboboraInv(struct Abobora aboboraInv[9], int tamanho, int comecoTil
 		}
 	}
 }
+
+void desenharToolbar(int inicio_x, int inicio_y, int tamanho, ALLEGRO_BITMAP* grid) {
+
+	for (int i = 0; i < 4; i++) {
+		int x = inicio_x + i * tamanho;
+		int y = inicio_y;
+
+		al_draw_bitmap(grid, x, y, 0);
+	}
+
+	
+}
