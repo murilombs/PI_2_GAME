@@ -3,6 +3,6 @@
 
 #include <allegro5/allegro.h>
 
-void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* abob, ALLEGRO_EVENT_QUEUE* queue, int tamanho_tile);
+void desenhartilemap(int tilemap[7][7], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* grama, ALLEGRO_BITMAP* terra, ALLEGRO_BITMAP* estagio0, ALLEGRO_BITMAP* estagio1, ALLEGRO_BITMAP* estagio2, ALLEGRO_BITMAP* estagio3, ALLEGRO_EVENT_QUEUE* queue, int tamanho_tile);
 
 #endif

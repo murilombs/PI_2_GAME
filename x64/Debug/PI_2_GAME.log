@@ -1,22 +1,2 @@
-﻿  main.c
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x6a0 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x81a that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x823 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x83a that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x8ab that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x8b5 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x93d that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xc88 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xcac that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xcb6 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xf85 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xf8d that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xf9c that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0xfc7 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11f6 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x11fb that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x120d that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(1,1): warning C4828: The file contains a character starting at offset 0x1250 that is illegal in the current source character set (codepage 65001).
-C:\Users\herob\source\repos\PI_2_GAME\main.c(144,3): warning C4013: 'desenhartilemap' undefined; assuming extern returning int
-C:\Users\herob\source\repos\PI_2_GAME\main.c(204,22): warning C4048: different array subscripts: 'int (*)[14]' and 'int [7][7]'
+﻿  inventario.c
   PI_2_GAME.vcxproj -> C:\Users\herob\source\repos\PI_2_GAME\x64\Debug\PI_2_GAME.exe

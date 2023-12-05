@@ -2,13 +2,13 @@
 #include <allegro5/allegro_primitives.h>
 #include <allegro5/allegro_image.h>
 
-void desenhartilemap(int tilemap[7][7], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* grama, ALLEGRO_BITMAP* terra, ALLEGRO_BITMAP* estagio0, ALLEGRO_BITMAP* estagio1, ALLEGRO_BITMAP* estagio2, ALLEGRO_BITMAP* estagio3, ALLEGRO_EVENT_QUEUE* queue, int tamanho_tile) {
+void desenhartilemap(int tilemap[7][7], int inicio_x, int inicio_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* grama, ALLEGRO_BITMAP* terra, ALLEGRO_BITMAP* estagio0, ALLEGRO_BITMAP* estagio1, ALLEGRO_BITMAP* estagio2, ALLEGRO_BITMAP* estagio3, ALLEGRO_EVENT_QUEUE* queue, int tamanho_tile) {
 
 	for (int linha = 0; linha < 7; linha++) {
 		for (int coluna = 0; coluna < 7; coluna++) {
 
 			int x = inicio_x + coluna * tamanho_tile;
-			int y = fim_y + linha * tamanho_tile;
+			int y = inicio_y + linha * tamanho_tile;
 
 			if (tilemap[linha][coluna] == 4) {
 				al_draw_bitmap(grama, x, y, 0);

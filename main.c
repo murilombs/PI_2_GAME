@@ -7,10 +7,18 @@
 #include <allegro5/allegro_primitives.h>
 
 #include "tilemap.h"
+#include "abobora.h"
+#include "inventario.h"
 
-#define TILE_SIZE 96
+
+
+#define TILE_SIZE 80
+#define GRID_SIZE 80
 
 char textoDebug[2000];
+struct Abobora aboboras[40];
+struct Abobora aboboraInv[9];
+struct Semente sementeInv[9];
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
 
@@ -91,6 +99,12 @@ int main() {
 	must_init(estagio2, "imagem de estagio2");
 	ALLEGRO_BITMAP* estagio3 = al_load_bitmap("imagens/tileEstagio3.png");
 	must_init(estagio3, "imagem de estagio3");
+	ALLEGRO_BITMAP* gridInv = al_load_bitmap("imagens/grid.png");
+	must_init(gridInv, "imagem de grid do inventário");
+	ALLEGRO_BITMAP* gridSemente = al_load_bitmap("imagens/gridSemente.png");
+	must_init(gridSemente, "imagem de grid do inventário com semente");
+	ALLEGRO_BITMAP* gridAbobora = al_load_bitmap("imagens/gridAbobora.png");
+	must_init(gridAbobora, "imagem de grid do inventário com abobora");
 
 	must_init(al_init_primitives_addon(), "primitives addon"); // Inicialização dos primitives
 
@@ -117,22 +131,27 @@ int main() {
 
 	int tilemap[7][7] = {
 	{4, 4, 4, 4, 4, 4, 4},
-	{4, 1, 2, 3, 2, 1, 4},
-	{4, 2, 0, 2, 1, 2, 4},
-	{4, 1, 2, 1, 2, 3, 4},
-	{4, 2, 3, 0, 1, 2, 4},
-	{4, 1, 2, 1, 2, 3, 4},
+	{4, 5, 5, 5, 5, 5, 4},
+	{4, 5, 5, 5, 5, 5, 4},
+	{4, 5, 5, 5, 5, 5, 4},
+	{4, 5, 5, 5, 5, 5, 4},
+	{4, 5, 5, 5, 5, 5, 4},
 	{4, 4, 4, 4, 4, 4, 4}
 	};
 
-	int comeco_tilemap_x = (al_get_display_width(display) - (7 * 96)) / 2;
-	int fim_tilemap_y = (al_get_display_height(display) - (7 * 96)) / 2;
+
+
+	int comeco_tilemap_x = (al_get_display_width(display) - (7 * TILE_SIZE)) / 2;
+	int comeco_tilemap_y = (al_get_display_height(display) - (7 * TILE_SIZE)) / 2;
+	int final_tilemap_x = comeco_tilemap_x + (7 * 96);
 
 	bool mostrar_tooltip = false; // O tooltip será visível quando a variável for true
 
 	bool arrastando = false;
 
 	// tilemap da plantação
+
+	initInv(sementeInv, aboboraInv);
 
 	while (1) { // Loop principal
 
@@ -141,7 +160,9 @@ int main() {
 		al_wait_for_event(queue, &event);
 
 		al_clear_to_color(al_map_rgb(163, 210, 119));
-		desenhartilemap(tilemap, comeco_tilemap_x, fim_tilemap_y, mouse_x, mouse_y, grama, terra, estagio0, estagio1, estagio2, estagio3, queue, TILE_SIZE);
+		desenhartilemap(tilemap, comeco_tilemap_x, comeco_tilemap_y, mouse_x, mouse_y, grama, terra, estagio0, estagio1, estagio2, estagio3, queue, TILE_SIZE);
+		desenharSementeInv(sementeInv, GRID_SIZE, comeco_tilemap_x, gridSemente, gridInv);
+		desenharAboboraInv(aboboraInv, GRID_SIZE, comeco_tilemap_x, gridAbobora, gridInv);
 
 		// Caso ocorra um evento x, tal coisa deve acontecer
 		switch (event.type) {
@@ -195,9 +216,8 @@ int main() {
 			printf("x = %d\ny = %d\n\n", mouse_x, mouse_y);
 
 			if (event.mouse.button & 1) {
-				if ((event.mouse.x >= 480 && event.mouse.x <= 800) && (event.mouse.y >= 300 && event.mouse.y <= 600)) {
+				if ((event.mouse.x >= 0 && event.mouse.x <= 1280) && (event.mouse.y >= 0 && event.mouse.y <= 720)) {
 					arrastando = true;
-
 				}
 			}
 

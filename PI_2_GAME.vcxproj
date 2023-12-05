@@ -136,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="abobora.c" />
+    <ClCompile Include="inventario.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="manipuladoresGene.c" />
     <ClCompile Include="semente.c" />
@@ -143,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abobora.h" />
+    <ClInclude Include="inventario.h" />
     <ClInclude Include="manipuladoresGene.h" />
     <ClInclude Include="semente.h" />
     <ClInclude Include="tilemap.h" />
