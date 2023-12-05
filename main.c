@@ -22,8 +22,11 @@
 
 char textoDebug[2000];
 struct Abobora aboboras[40];
+struct Abobora aboboraTilemap[7][7];
 struct Abobora aboboraInv[9];
+struct Abobora bufferPlantacaoAbobora;
 struct Semente sementeInv[9];
+struct Semente bufferPlantacaoSemente;
 
 
 char textoDebug[2000];
@@ -119,11 +122,12 @@ int main() {
 	{4, 4, 4, 4, 4, 4, 4}
 	};
 
-
+	int gridClicada = -1;
 
 	int comeco_tilemap_x = (al_get_display_width(display) - (7 * TILE_SIZE)) / 2;
 	int comeco_tilemap_y = (al_get_display_height(display) - (7 * TILE_SIZE)) / 2;
 	int final_tilemap_x = comeco_tilemap_x + (7 * 96);
+	int final_tilemap_y = comeco_tilemap_y + (7 * 96);
 	int comeco_toolbar_x = (al_get_display_width(display) - (4 * TILE_SIZE)) / 2;
 
 	bool mostrar_tooltip = false; // O tooltip será visível quando a variável for true
@@ -159,9 +163,9 @@ int main() {
 
 		al_clear_to_color(al_map_rgb(163, 210, 119));
 		desenhartilemap(tilemap, comeco_tilemap_x, comeco_tilemap_y, mouse_x, mouse_y, grama, terra, estagio0, estagio1, estagio2, estagio3, queue, TILE_SIZE);
-		desenharSementeInv(sementeInv, GRID_SIZE, comeco_tilemap_x, gridSemente, gridInv);
-		desenharAboboraInv(aboboraInv, GRID_SIZE, comeco_tilemap_x, gridAbobora, gridInv);
-		desenharToolbar(comeco_toolbar_x, 635, GRID_SIZE, gridInv);
+		desenharSementeInv(sementeInv, GRID_SIZE, comeco_tilemap_x, gridSemente, gridInv, mouse_x, mouse_y);
+		desenharAboboraInv(aboboraInv, GRID_SIZE, comeco_tilemap_x, gridAbobora, gridInv, mouse_x, mouse_y);
+		desenharToolbar(comeco_toolbar_x, 635, GRID_SIZE, gridInv, mouse_x, mouse_y);
 
 		// Caso ocorra um evento x, tal coisa deve acontecer
 		switch (event.type) {
@@ -215,12 +219,28 @@ int main() {
 
 			mouse_x = event.mouse.x;
 			mouse_y = event.mouse.y;
-			printf("x = %d\ny = %d\n\n", mouse_x, mouse_y);
+
+			printf("mouse x: %d, mouse y: %d\n", mouse_x, mouse_y);
 
 			if (event.mouse.button & 1) {
-				if ((event.mouse.x >= 480 && event.mouse.x <= 800) && 
-					(event.mouse.y >= 300 && event.mouse.y <= 600)) {
-					arrastando = true;
+				if ((event.mouse.x >= 60 && event.mouse.x <= 300) && 
+					(event.mouse.y >= 240 && event.mouse.y <= 480) && gridClicada == -1) {
+					checarGridSemente(GRID_SIZE, comeco_tilemap_x, mouse_x, mouse_y);
+					gridClicada = 0;
+				}
+				if ((event.mouse.x >= 980 && event.mouse.x <= 1220) &&
+					(event.mouse.y >= 240 && event.mouse.y <= 480) /* && gridClicada == -1 */) {
+					printf("indice abobora: %d\n", checarGridAbobora(GRID_SIZE, comeco_tilemap_x, mouse_x, mouse_y));
+					gridClicada = 1;
+				}
+				if ((event.mouse.x >= 480 && event.mouse.x <= 800) &&
+					(event.mouse.y >= 635 && event.mouse.y <= 715) && gridClicada == -1) {
+					gridClicada = 2;
+				}
+				if ((event.mouse.x >= 440 && event.mouse.x <= 840) &&
+					(event.mouse.y >= 160 && event.mouse.y <= 560) /*&& gridClicada == -1*/) {
+					checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, aboboras);
+					gridClicada = 3;
 				}
 			}
 

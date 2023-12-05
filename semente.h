@@ -5,6 +5,7 @@ struct Semente
 {
 	int aboboraCode;
 	int genes[4][2];
+	int posicaoInv;
 };
 
 #endif
