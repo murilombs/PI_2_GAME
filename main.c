@@ -5,10 +5,12 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_native_dialog.h>
 
-#define TILE_SIZE 92
+#define TILE_SIZE 64
+#define MAX_ABOB 24
 
-char textoDebug[2000];
+char texto[2000];
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
 
@@ -43,13 +45,14 @@ void checaClickAbobora(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, 
 				mouse_y > y &&
 				mouse_x < x + TILE_SIZE &&
 				mouse_y < y + TILE_SIZE) {
-				printf("Clicando em cima do quadrado de x: %d e y: %d\n", linha, coluna);
+				printf("Clicando em cima do quadrado x = %d y = %d\n", linha, coluna);
 			}
 		}
 	}
 }
 
-void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* abob, ALLEGRO_EVENT_QUEUE* queue) {
+// inicio_x e inicio_y são as coordenadas onde a matriz deve ser desenhada
+void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* abob) {
 
 	for (int linha = 0; linha < 3; linha++) {
 		for (int coluna = 0; coluna < 14; coluna++) {
@@ -59,7 +62,7 @@ void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int
 
 			if (matriz[linha][coluna] == 1) {
 				al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(163, 210, 119));
-				//al_draw_bitmap(abob, x, y, 0);
+				
 			}
 			else if (matriz[linha][coluna] == 2) {
 				al_draw_filled_rectangle(x, y, x + TILE_SIZE, y + TILE_SIZE, al_map_rgb(125, 86, 64));
@@ -78,8 +81,22 @@ void desenharMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int
 
 }
 
-void interacaoMatriz(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_EVENT_QUEUE* queue) {
+void abobIniciais(int matriz[3][14], int inicio_x, int fim_y, int mouse_x, int mouse_y, ALLEGRO_BITMAP* abob) {
+	
+	for (int linha = 0; linha < 3; linha++) {
+		for (int coluna = 0; coluna < 14; coluna++) {
 
+			int x = inicio_x + coluna * TILE_SIZE;
+			int y = fim_y + linha * TILE_SIZE;
+
+			if (linha == 2 && (coluna == 2 || coluna == 5 || coluna == 8 || coluna == 11)) {
+				al_draw_bitmap(abob, x, y, 0);
+
+
+			}
+
+		}
+	}
 }
 
 
@@ -98,6 +115,7 @@ int main() {
 	// Inicialização, criação do display e dimensões
 	ALLEGRO_DISPLAY* display = al_create_display(1280, 720);
 	must_init(display, "display");
+
 
 	// Inicialização e criação da fila de eventos
 	ALLEGRO_EVENT_QUEUE* queue = al_create_event_queue();
@@ -134,8 +152,8 @@ int main() {
 	int mouse_y = 0; // Coordenada de y (eixo horizontal)
 
 	bool mostrar_tooltip = false; // O tooltip será visível quando a variável for true
-
 	bool arrastando = false;
+	bool hover = false;
 
 	// Matriz da plantação
 	int matriz[3][14] = {
@@ -145,13 +163,17 @@ int main() {
 	};
 
 	while (1) { // Loop principal
-
-
+		
+		drawPopUp(font, "Lorem ipsum .", 400, 100);
 
 		al_wait_for_event(queue, &event);
 
 		al_clear_to_color(al_map_rgb(255, 255, 255));
-		desenharMatriz(matriz, 0, 444, mouse_x, mouse_y, abob, queue);
+
+		desenharMatriz(matriz, 0, 444, mouse_x, mouse_y, abob);
+		abobIniciais(matriz, 0, 444, mouse_x, mouse_y, abob);
+		
+
 
 		// Caso ocorra um evento x, tal coisa deve acontecer
 		switch (event.type) {
@@ -174,7 +196,7 @@ int main() {
 
 			if ((mouse_x >= 960 && mouse_x <= 1920) && (mouse_y >= 520 && mouse_y <= 720)) {
 				mostrar_tooltip = true;
-				al_start_timer(timer);
+				al_start_timer(timer);*/
 			}
 			else {
 				mostrar_tooltip = false;
@@ -184,6 +206,10 @@ int main() {
 			if (arrastando) {
 				mouse_x += event.mouse.dx;
 				mouse_y += event.mouse.dy;
+
+			}
+
+			if (hover) {
 
 			}
 
@@ -210,7 +236,7 @@ int main() {
 
 				}
 			}
-
+	
 			checaClickAbobora(matriz, 0, 444, mouse_x, mouse_y);
 
 
@@ -228,7 +254,7 @@ int main() {
 
 		}
 
-		al_draw_text(font, al_map_rgb(0, 0, 0), 10, 10, 0, textoDebug);
+		//al_draw_text(font, al_map_rgb(0, 0, 0), 10, 10, 0, textoDebug);
 
 		al_flip_display();
 

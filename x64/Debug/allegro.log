@@ -1,0 +1,8 @@
+stdio    D         file_stdio.c:110  file_stdio_fopen                 [   0.00000] opening C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\x64\Debug\allegro5.cfg r
+system   D            wsystem.c:834  maybe_parent_dir                 [   0.00000] Also searching C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\x64\
+system   D            wsystem.c:889  _al_win_safe_load_library        [   0.00000] PathFindOnPath found: C:\WINDOWS\system32\shcore.dll
+system   D            wsystem.c:795  load_library_at_path             [   0.00000] Calling LoadLibrary C:\WINDOWS\system32\shcore.dll
+system   I            wsystem.c:798  load_library_at_path             [   0.00000] Loaded C:\WINDOWS\system32\shcore.dll
+system   I             system.c:271  al_install_system                [   0.00000] Allegro version: 5.2.8
+stdio    D         file_stdio.c:110  file_stdio_fopen                 [   0.00039] opening goethe\GoetheBold.ttf rb
+font     E                ttf.c:1025 al_load_ttf_font_stretch         [   0.00058] Unable to open file for reading: goethe\GoetheBold.ttf
