@@ -1,0 +1,4 @@
+C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\Fazenda do Seu Gene - MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\domin\source\repos\Project1\Fazenda do Seu Gene\MuriloGit\murilombs\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\herob\source\repos\PI_2_GAME\x64\Debug\PI_2_GAME.exe
+C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe
