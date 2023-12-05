@@ -147,6 +147,14 @@
     <ClInclude Include="popup.h" />
     <ClInclude Include="semente.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="novas_imagens\gridSemente.png" />
+    <Image Include="novas_imagens\tileEstagio0 .png" />
+    <Image Include="novas_imagens\tileEstagio0.png" />
+    <Image Include="novas_imagens\tileEstagio1.png" />
+    <Image Include="novas_imagens\tileEstagio2.png" />
+    <Image Include="novas_imagens\tileEstagio3.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="packages\AllegroDeps.1.13.0\build\native\AllegroDeps.targets" Condition="Exists('packages\AllegroDeps.1.13.0\build\native\AllegroDeps.targets')" />

@@ -48,4 +48,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="novas_imagens\tileEstagio3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="novas_imagens\gridSemente.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="novas_imagens\tileEstagio0.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="novas_imagens\tileEstagio1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="novas_imagens\tileEstagio2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="novas_imagens\tileEstagio0 .png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>
