@@ -53,6 +53,7 @@ void tooltip(
 	if (temAbobora) {
 		int idx = buscadorDeAbobora(temAbobora, aboborasCriadas, aboboras);
 		displayCaracteristica(&texto, &aboboras[idx]);
+		printf("texto -> %s", texto);
 
 		al_draw_filled_rectangle(mouse_x, mouse_y,
 			mouse_x + largura,
@@ -62,6 +63,6 @@ void tooltip(
 		al_draw_textf(font, al_map_rgb(0, 0, 0),
 			mouse_x + 15,
 			mouse_y + 10,
-			20, "%s", &texto);
+			20, "%s", texto);
 	}
 }

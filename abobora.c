@@ -39,7 +39,7 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 }
 
 
-void displayCaracteristica(char** caracteristicas, struct Abobora* abobora) {
+void displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
 	char* sabor;
 	char* tamanho;
 	char* cor;
