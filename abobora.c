@@ -17,7 +17,6 @@ void gera_abobora_code(struct Abobora *abobora, int anterior) {
 int buscadorDeAbobora(int aboboraCode, int aboborasCriadas, struct Abobora* aboboras) {
 	for (int i = 0; i < aboborasCriadas; i++) {
 		if (aboboraCode == aboboras[i].semente.aboboraCode) {
-			printf("aboboraCode %d\n", aboboras[i].semente.aboboraCode);
 			return i;
 		}
 	}
@@ -39,12 +38,12 @@ void mudancaDeCiclo(struct Abobora* abobora, int aboborasCriadas, int timestampA
 	}
 }
 
-// FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
-char* displayCaracteristica(struct Abobora* abobora) {
-	char* sabor = "A";
-	char* tamanho = "B";
-	char* cor = "C";
-	char* casca = "D";
+
+char* displayCaracteristica(char* caracteristicas, struct Abobora* abobora) {
+	char* sabor;
+	char* tamanho;
+	char* cor;
+	char* casca;
 
 	for (int i = 0; i < 4; i++) {
 		// SABOR
@@ -107,18 +106,12 @@ char* displayCaracteristica(struct Abobora* abobora) {
 
 	size_t comprimento_total = strlen(sabor) + strlen(tamanho) + strlen(cor) + strlen(casca);
 
-	char* caracteristicas = (char*)malloc(comprimento_total);
-
-	if (caracteristicas == NULL) {
-		fprintf(stderr, "Erro ao alocar memória.\n");
-		exit(EXIT_FAILURE);
-	}
-
 	sprintf(caracteristicas, "%s,\n%s,\n%s,\n%s", sabor, tamanho, cor, casca);
 
 	return caracteristicas;
 }
 
+// FUNÇÕES PARA TESTE [DEVEM SER APAGADAS]
 void displayTimestampStagio(struct Abobora abobora) {
 	printf("Estagio: %d \nTimestamp: %d\n", abobora.estagio, abobora.tempoCiclo);
 };

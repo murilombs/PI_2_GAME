@@ -1,33 +1,18 @@
-﻿  main.c
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x903 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xa7d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xa86 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xa9d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb0e que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb18 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xba0 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xeeb que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xf0f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xf19 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11e8 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11f0 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x11ff que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x122a que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1459 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x145e que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1470 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1682 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x5f que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\manipuladoresGene.h(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb9 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
-C:\Users\muril\PI_2_GAME\main.c(48,19): warning C4013: 'checaPosicaoNoCampo' indefinido; assumindo extern retornando int
-C:\Users\muril\PI_2_GAME\main.c(51,60): warning C4047: 'função': 'Abobora *' difere em níveis de indireção de 'Abobora **'
-C:\Users\muril\PI_2_GAME\main.c(51,60): warning C4024: 'buscadorDeAbobora': tipos diferentes para parâmetro formal e real 3
-C:\Users\muril\PI_2_GAME\main.c(179,20): warning C4047: '<': 'int' difere em níveis de indireção de 'int *'
-C:\Users\muril\PI_2_GAME\main.c(187,30): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'time_t'
-C:\Users\muril\PI_2_GAME\main.c(187,30): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
-C:\Users\muril\PI_2_GAME\main.c(258,6): warning C4047: 'função': 'int' difere em níveis de indireção de 'int *'
-C:\Users\muril\PI_2_GAME\main.c(258,6): warning C4024: 'tooltip': tipos diferentes para parâmetro formal e real 5
-C:\Users\muril\PI_2_GAME\main.c(258,23): warning C4047: 'função': 'Abobora *' difere em níveis de indireção de 'Abobora (*)[49]'
-C:\Users\muril\PI_2_GAME\main.c(258,23): warning C4024: 'tooltip': tipos diferentes para parâmetro formal e real 6
-C:\Users\muril\PI_2_GAME\main.c(177,7): warning C4047: 'inicializando': 'int *' difere em níveis de indireção de 'int'
+﻿  abobora.c
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x80 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xc6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1ad que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x315 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x355 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x37d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x55c que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xb6d que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xdb6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(29,22): warning C4047: '=': 'int' difere em níveis de indireção de 'time_t *'
+C:\Users\muril\PI_2_GAME\abobora.c(36,32): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'int'
+C:\Users\muril\PI_2_GAME\abobora.c(36,32): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
+C:\Users\muril\PI_2_GAME\abobora.c(43,35): warning C4028: parâmetro formal 1 diferente da declaração
+C:\Users\muril\PI_2_GAME\abobora.c(43,68): warning C4028: parâmetro formal 2 diferente da declaração
+C:\Users\muril\PI_2_GAME\abobora.c(110,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\muril\PI_2_GAME\abobora.c(24): warning C4715: 'buscadorDeAbobora': nem todos os caminhos de controle retornam um valor
   PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe

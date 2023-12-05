@@ -17,7 +17,7 @@
 #define TILE_SIZE 96
 
 char textoDebug[2000];
-const char* textoDisplay;
+char* textoDisplay[10];
 
 void must_init(bool inicializacao_bem_sucedida, const char* description) {
 
@@ -45,11 +45,10 @@ void tooltip(
 	int altura = 100;
 
 
-	int temAbobora = checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, aboboras);
+	int temAbobora = checaPosicaoNoCampo(400, 120, mouse_x, mouse_y, aboborasCriadas, &aboboras);
 	if (temAbobora) {
-		printf("->%d - %d\n", temAbobora, aboboras[1].semente.aboboraCode);
 		int idx = buscadorDeAbobora(temAbobora, aboborasCriadas, &aboboras);
-		textoDisplay = displayCaracteristica(&aboboras[idx]);
+		displayCaracteristica(&textoDisplay,  &aboboras[idx]);
 
 		al_draw_filled_rectangle(mouse_x, mouse_y, 
 			mouse_x + largura, 
@@ -174,7 +173,7 @@ int main() {
 
 	struct Abobora aboboras[49];
 
-	int* aboborasCriadas = 2;
+	int* aboborasCriadas = 1;
 
 	for (int i = 0; i < aboborasCriadas; i++) {
 		gera_abobora_code(&aboboras[i], i);
@@ -295,7 +294,8 @@ int main() {
 		al_set_target_bitmap(al_get_backbuffer(display));
 
 	}
-	free((void*)textoDisplay);
+
+	//free((void*)textoDisplay);
 	//displayTodasAboboras(aboborasCriadas, &aboboras);
 	al_destroy_font(font);
 	al_destroy_display(display);
