@@ -23,5 +23,5 @@ void mudancaDeCiclo(struct Abobora* aboboras, int aboborasCriadas, int timestamp
 
 void displayCaracteristica(char* caracteristicas, struct Abobora* abobora);
 
-void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras);
+//void displayTodasAboboras(int aboborasCriadas, struct Abobora* aboboras);
 #endif

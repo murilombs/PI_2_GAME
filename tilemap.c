@@ -25,6 +25,7 @@ void desenhartilemap(
 			int y = inicio_y + linha * tamanho_tile;
 
 			if (tilemap[linha][coluna] == 4) {
+		
 				al_draw_bitmap(grama, x, y, 0);
 			}
 			else if (tilemap[linha][coluna] == 5) {

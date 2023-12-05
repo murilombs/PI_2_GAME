@@ -10,7 +10,7 @@
 
 void tooltip(
 	ALLEGRO_FONT* font,
-	const char* texto,
+	char* texto,
 	int mouse_x,
 	int mouse_y,
 	int aboborasCriadas,
