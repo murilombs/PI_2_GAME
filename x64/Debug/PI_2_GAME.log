@@ -1,2 +1,22 @@
-﻿  tilemap.c
+﻿  abobora.c
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x80 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0xc6 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x1ad que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x2d4 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x314 que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x33c que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(1,1): warning C4828: O arquivo contém um caractere começando com o deslocamento 0x51b que é inválido no conjunto de caracteres de origem atual (página de código 65001).
+C:\Users\muril\PI_2_GAME\abobora.c(28,22): warning C4047: '=': 'int' difere em níveis de indireção de 'time_t *'
+C:\Users\muril\PI_2_GAME\abobora.c(35,32): warning C4047: 'função': 'time_t *' difere em níveis de indireção de 'int'
+C:\Users\muril\PI_2_GAME\abobora.c(35,32): warning C4024: 'tempoDeCiclo': tipos diferentes para parâmetro formal e real 2
+C:\Users\muril\PI_2_GAME\abobora.c(109,10): warning C4047: 'função': 'char *const ' difere em níveis de indireção de 'char *[60]'
+C:\Users\muril\PI_2_GAME\abobora.c(109,10): warning C4024: 'sprintf': tipos diferentes para parâmetro formal e real 1
+C:\Users\muril\PI_2_GAME\abobora.c(110,9): warning C4477: 'printf': a cadeia de formato '%s' requer um argumento do tipo 'char *', mas um argumento variadic 1 tem o tipo 'char **'
+C:\Users\muril\PI_2_GAME\abobora.c(111,19): warning C4047: '=': 'char' difere em níveis de indireção de 'char **'
+C:\Users\muril\PI_2_GAME\abobora.c(109,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  funcExibicao.c
+C:\Users\muril\PI_2_GAME\funcExibicao.c(55,25): warning C4047: 'função': 'char *' difere em níveis de indireção de 'char **'
+C:\Users\muril\PI_2_GAME\funcExibicao.c(55,25): warning C4024: 'displayCaracteristica': tipos diferentes para parâmetro formal e real 1
+  Gerando Código...
+C:\Users\muril\PI_2_GAME\abobora.c(23): warning C4715: 'buscadorDeAbobora': nem todos os caminhos de controle retornam um valor
   PI_2_GAME.vcxproj -> C:\Users\muril\PI_2_GAME\x64\Debug\PI_2_GAME.exe

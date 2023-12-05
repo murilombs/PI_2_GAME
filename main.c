@@ -163,8 +163,8 @@ int main() {
 
 		al_clear_to_color(al_map_rgb(163, 210, 119));
 		desenhartilemap(tilemap, comeco_tilemap_x, comeco_tilemap_y, mouse_x, mouse_y, grama, terra, estagio0, estagio1, estagio2, estagio3, queue, TILE_SIZE);
-		desenharSementeInv(sementeInv, GRID_SIZE, comeco_tilemap_x, gridSemente, gridInv, mouse_x, mouse_y);
-		desenharAboboraInv(aboboraInv, GRID_SIZE, comeco_tilemap_x, gridAbobora, gridInv, mouse_x, mouse_y);
+		desenharSementeInv(sementeInv, GRID_SIZE, comeco_tilemap_x, estagio0, gridInv, mouse_x, mouse_y);
+		desenharAboboraInv(aboboraInv, GRID_SIZE, comeco_tilemap_x, estagio3, gridInv, mouse_x, mouse_y);
 		desenharToolbar(comeco_toolbar_x, 635, GRID_SIZE, gridInv, mouse_x, mouse_y);
 
 		// Caso ocorra um evento x, tal coisa deve acontecer
